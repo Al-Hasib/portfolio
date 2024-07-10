@@ -8,3 +8,30 @@
 * Natural Language Processing
 * Generative AI
 * MLOPs
+
+## SkillSets
+Programming Language: Python
+Data Analysis & Manipulation: Numpy, Pandas
+Data Visulization: Matplotlib, Seaborn, Altair
+
+## Projects
+
+### Machine Learning
+* **Forest Cover Type Prediction**
+* **IPL Score Prediction**
+
+### Deep Learning
+* **Brain Tumor (MRI) Detection**
+
+### Computer Vision
+* **Small Object Detection**
+
+### Natural Language Processing
+* **Sentiment Analysis**
+
+### Generative AI
+
+### End to End Projects with MLOPS and Development
+
+##Contact
+**Mail**: alhasib.iu.cse
