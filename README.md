@@ -34,4 +34,6 @@ Data Visulization: Matplotlib, Seaborn, Altair
 ### End to End Projects with MLOPS and Development
 
 ## Contact
-**Mail**: alhasib.iu.cse
+**Mail**: alhasib.iu.cse@gmail.com
+**Linkedin**: www.linkedin.com/in/md-abdullah-al-hasib-874174194
+
