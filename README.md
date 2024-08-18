@@ -11,8 +11,11 @@
 
 ## SkillSets
 Programming Language: Python
+
 Data Analysis & Manipulation: Numpy, Pandas
+
 Data Visulization: Matplotlib, Seaborn, Altair
+
 
 ## Projects
 
