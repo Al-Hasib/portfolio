@@ -38,7 +38,7 @@ Data Visulization: Matplotlib, Seaborn, Altair
 
 ## Contact
 
-[alhasib.iu.cse@gmail.com](Mail)
+[Mail](alhasib.iu.cse@gmail.com)
 
-[www.linkedin.com/in/md-abdullah-al-hasib-874174194](Linkedin)
+[Linkedin](www.linkedin.com/in/md-abdullah-al-hasib-874174194)
 
