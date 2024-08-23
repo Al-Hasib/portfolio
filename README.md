@@ -22,6 +22,12 @@
 
 **Natural Language Processing**: NLTK, Gensim, TextBlob, Hugging Face, StandfordNLP
 
+**Generativer AI**: LangChain, LlamaIndex, RAG, OpenAI Api, Hugging face, Pinecone (Vector Database), ChromaDB
+
+**MLOPs**: Docker, MLFlow, DVC, Apache Airflow, BentoML, CLOUD(AWS)
+
+**Others**: Git & Github, Streamlit, Fast API, Flask
+
 ## Projects
 
 ### Machine Learning
@@ -43,8 +49,13 @@
 
 
 ## Open Source Contribution
+* [ENG_TEXT_CLEANER](https://pypi.org/project/eng-text-cleaner/) : A Python package for Cleaning the text from unnecessary characters like stopwords, punctuation, emojis, spelling mistakes and other preprocessing techniques.
+* [NoCodeTextClassifier](https://pypi.org/project/NoCodeTextClassifier/): A Python package for automatically perform the text classification task including text preprocessing, training the model, evaluation and inference. This will help you to perform text classification task without knowing the depth of the NLP methodologies. Also It will help you to perform hyperparameter tuning to find the best model for your dataset.
 
+## Education
+Bachelor of Science, Computer Science & Engineering
 
+Islamic University, Bangladesh
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
