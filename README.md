@@ -10,12 +10,17 @@
 * MLOPs
 
 ## SkillSets
-Programming Language: Python
+**Programming Language**: Python
 
-Data Analysis & Manipulation: Numpy, Pandas
+**Data Analysis**: Numpy, Pandas, Matplotlib, Seaborn, Altair
 
-Data Visulization: Matplotlib, Seaborn, Altair
+**Machine Learning**: Scikit-learn, XGBoost, Ensemble Models
 
+**Deep Learning**: Tensorflow, Keras, Pytorch, Transformers
+
+**Computer Vision**: OpenCV, Ultralytics, Pillow, Scikit-image, Detectron2, YOLO
+
+**Natural Language Processing**: NLTK, Gensim, TextBlob, Hugging Face, StandfordNLP
 
 ## Projects
 
@@ -35,6 +40,11 @@ Data Visulization: Matplotlib, Seaborn, Altair
 ### Generative AI
 
 ### End to End Projects with MLOPS and Development
+
+
+## Open Source Contribution
+
+
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
