@@ -1,7 +1,12 @@
 <h1 align="center">Hi 👋, I'm Md Abdullah Al Hasib</h1>
 <h3 align="center">A passionate Machine Learning (AI) Engineer from Bangladesh</h3>
 
-## I have Technical Experience and Interested In
+## About me
+
+I’m a highly motivated and self-driven Machine Learning Engineer with a strong foundation in developing and deploying scalable AI solutions. I specialize in building end-to-end ML pipelines, deep learning applications, and real-world AI-powered systems across domains like NLP, Computer Vision, and Generative AI. I am passionate about open source and delivering AI solutions that make a meaningful impact.
+
+
+## I have Technical Experience and am Interested In
 * Machine Learning
 * Deep Learning
 * Computer Vision
@@ -31,9 +36,15 @@
 ## Projects
 
 ### Machine Learning
-* **Forest Cover Type Prediction**
-* **IPL Score Prediction**
+* **[Forest Cover Type Prediction](https://github.com/Al-Hasib/End-to-End-Forest-Cover-Type-Prediction-ML-Project)**
+  - End-to-end ML pipeline (Data ingestion → Training → Evaluation)
+  - Tools: Scikit-learn, XGBoost, Pandas, Numpy
 
+* **IPL Score Prediction**
+  - End to end pipeline (Data ingestion -> EDA -> Feature Engineering -> Training -> Evaluation -> Deployment
+  - Regression model to predict final score in live T20 matches
+  - Tools: Pandas, Scikit-learn, Streamlit
+    
 ### Deep Learning
 * **Brain Tumor (MRI) Detection**
 
@@ -44,8 +55,35 @@
 * **Sentiment Analysis**
 
 ### Generative AI
+* **[Intent Based AI Search Application](https://github.com/Al-Hasib/AISearchApplication/tree/main)**
+  - Ecommerce Seach System through AI with safety Guardrails ([Combined](https://github.com/Al-Hasib/AI-Search-Application/tree/main)
+  - Tools: Huggingface, Langchain, RAG, Vector Database, Finetuning LLM, FastAPI
 
-### End to End Projects with MLOPS and Development
+* **[RAG Project](https://github.com/Al-Hasib/RAG-Project)**
+  - Chatbot Application with RAG (able to add [knowledge base](http://134.122.1.211:5000/upload_file) through UI)
+  - Tools: OpenAI, LangChain, Docker, Pandas, PymuPDF, FastAPI, Flask, Qdrant
+
+* **[OpenNotebook API](http://65.108.142.207:9000/docs)**
+  - [OpenNotebook](https://github.com/lfnovo/open-notebook) is an open-source Notebook LM that is decorated by Streamlit UI.
+  - Convert the OpenNotebook into [API](https://gitlab.com/open-notebook1/open-notebook)
+  - Tools: Docker, FastAPI, OpenAI, langchain, Langgraph
+
+* **[Generative AI (Education Purpose)](https://github.com/Al-Hasib/Generative-AI/tree/main)**
+  - I write blog on Medium and make tutorial in Youtube. This is repo is made for the learners.
+  - Developed RAG, Quiz Test, Resume Checker for HR Projects
+
+### End-to-End Projects with MLOPS and Development
+
+### Web Automation
+* **[Scraping Web Page](https://github.com/Al-Hasib/cfonle)**
+  - Extract Screenshot of Car Information through VIN Number from CarfaxOnline.
+  - Send the PDF to the Telegram Bot
+  - Tools: Telegram, Selenium, Pandas, FastAPI, AWS(Windows-ec2 machine)
+
+### API
+* **Zip File Extraction API**
+  - Download Zip -> Extract Zip files -> Store AWS S3 bucket -> Provide file links
+  - FastAPI, AWS, Pydantic, Uvicorn
 
 
 ## Open Source Contribution
