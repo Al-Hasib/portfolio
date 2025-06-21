@@ -40,23 +40,32 @@ I’m a highly motivated and self-driven Machine Learning Engineer with a strong
   - End-to-end ML pipeline (Data ingestion → Training → Evaluation)
   - Tools: Scikit-learn, XGBoost, Pandas, Numpy
 
-* **IPL Score Prediction**
+* **[IPL Score Prediction](https://github.com/Al-Hasib/IPL-Score-Prediction-App-Machine-Learning)**
   - End to end pipeline (Data ingestion -> EDA -> Feature Engineering -> Training -> Evaluation -> Deployment
-  - Regression model to predict final score in live T20 matches
+  - Regression model to predict the final score in live T20 matches
   - Tools: Pandas, Scikit-learn, Streamlit
     
 ### Deep Learning
-* **Brain Tumor (MRI) Detection**
+* **[Brain Tumor (MRI) Detection](https://github.com/Al-Hasib/Brain-Tumor-Classification-with-MLOPs/tree/main)**
+  - Data Collection -> Model Training -> Inference Test ->Evaluation
+  - Tools: Pytorch, Torchvision, Numpy, Pandas, Matplotlib, Kaggle, MLFlow
 
 ### Computer Vision
+* **[License Plate Detection](https://youtu.be/ZKxgbBqu3sc?si=p6f0vEBge9PDgbDG)**
+  - Data Collection -> Processing -> Training -> Inference ([Github Repo](https://github.com/Al-Hasib/Licence-Plate-Detection-Recognition/tree/main))
+  - Tools: Ultralytics, YOLOV8, OpenCV, Pandas, Numpy, os, matplotlib
+  
 * **Small Object Detection**
 
 ### Natural Language Processing
 * **Sentiment Analysis**
+* **[Text Classification](https://github.com/Al-Hasib/mPowerOnlineTest/tree/main)**
+  - End-to-end pipeline for Text Classification task
+  - Tools: Scikit-learn, Pandas, Matplotlib, NLTK, Wordcloud, Joblib
 
 ### Generative AI
 * **[Intent Based AI Search Application](https://github.com/Al-Hasib/AISearchApplication/tree/main)**
-  - Ecommerce Seach System through AI with safety Guardrails ([Combined](https://github.com/Al-Hasib/AI-Search-Application/tree/main)
+  - E-commerce Search System through AI with safety Guardrails ([Combined](https://github.com/Al-Hasib/AI-Search-Application/tree/main)
   - Tools: Huggingface, Langchain, RAG, Vector Database, Finetuning LLM, FastAPI
 
 * **[RAG Project](https://github.com/Al-Hasib/RAG-Project)**
@@ -70,7 +79,7 @@ I’m a highly motivated and self-driven Machine Learning Engineer with a strong
 
 * **[Generative AI (Education Purpose)](https://github.com/Al-Hasib/Generative-AI/tree/main)**
   - I write blog on Medium and make tutorial in Youtube. This is repo is made for the learners.
-  - Developed RAG, Quiz Test, Resume Checker for HR Projects
+  - Developed RAG, Quiz Test, [Resume Checker](https://youtu.be/Ml4qkQQopMs?si=SqzFkNCVBa1xJhHd) for HR Projects
 
 ### End-to-End Projects with MLOPS and Development
 
@@ -81,7 +90,7 @@ I’m a highly motivated and self-driven Machine Learning Engineer with a strong
   - Tools: Telegram, Selenium, Pandas, FastAPI, AWS(Windows-ec2 machine)
 
 ### API
-* **Zip File Extraction API**
+* **[Zip File Extraction API](https://github.com/Al-Hasib/zip_extractor_api)**
   - Download Zip -> Extract Zip files -> Store AWS S3 bucket -> Provide file links
   - FastAPI, AWS, Pydantic, Uvicorn
 
