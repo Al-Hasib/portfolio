@@ -27,7 +27,7 @@ I’m a highly motivated and self-driven Machine Learning Engineer with a strong
 
 **Natural Language Processing**: NLTK, Gensim, TextBlob, Hugging Face, StandfordNLP
 
-**Generativer AI**: LangChain, LlamaIndex, RAG, OpenAI Api, Hugging face, Pinecone (Vector Database), ChromaDB
+**Generative AI**: LangChain, LlamaIndex, RAG, OpenAI Api, Hugging face, Pinecone (Vector Database), ChromaDB
 
 **MLOPs**: Docker, MLFlow, DVC, Apache Airflow, BentoML, CLOUD(AWS)
 
