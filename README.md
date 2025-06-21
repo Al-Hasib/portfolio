@@ -47,16 +47,29 @@ I’m a highly motivated and self-driven Machine Learning Engineer with a strong
 
 
 ### Deep Learning
+* **[Image Classification](https://github.com/Al-Hasib/codes/tree/master)**
+  - Image Collection -> Preprocess -> Model Training -> Evaluation -> Inference
+  - Tools: Pytorch, TorchVision, Matplotlib
+    
 * **[Brain Tumor (MRI) Detection](https://github.com/Al-Hasib/Brain-Tumor-Classification-with-MLOPs/tree/main)**
   - Data Collection -> Model Training -> Inference Test ->Evaluation
   - Tools: Pytorch, Torchvision, Numpy, Pandas, Matplotlib, Kaggle, MLFlow
 
 ### Computer Vision
+* **[Attendance through Face Recognition](https://github.com/Al-Hasib/face_recognition_attendance/tree/main)**
+  - Extract face from camera -> Recognize face -> append attendance to the Excel
+  - Tools: Pandas, OpenCV, face_recognition, Excel
+
 * **[License Plate Detection](https://youtu.be/ZKxgbBqu3sc?si=p6f0vEBge9PDgbDG)**
   - Data Collection -> Processing -> Training -> Inference ([Github Repo](https://github.com/Al-Hasib/Licence-Plate-Detection-Recognition/tree/main))
   - Tools: Ultralytics, YOLOV8, OpenCV, Pandas, Numpy, os, matplotlib
   
-* **Small Object Detection**
+* **Other Computer Vision Demo**
+  - [Image Annotation Roboflow](https://youtu.be/ZBI-OP4Yeps?si=vtGN_STdnJkvgxjs)
+  - [Car & License Plate recognitation with Tracking](https://youtu.be/_123pgz7A7Q?si=2SVbLA2E4_qAfW6q)
+  - [Vehicle Counting with Object Tracking](https://youtu.be/_123pgz7A7Q?si=2SVbLA2E4_qAfW6q)
+  - [Adult & Child Detection with Yolov8](https://youtu.be/PyP1-ObcjVw?si=5VxHG9zskFsjNRVc)
+  - [Instance Segmentation](https://youtu.be/kCV6WfUnkDM?si=5M5CZF9tlNKZuT93)
 
 
 ### Natural Language Processing
@@ -88,7 +101,7 @@ I’m a highly motivated and self-driven Machine Learning Engineer with a strong
   - Tools: Docker, FastAPI, OpenAI, langchain, Langgraph
 
 * **[Generative AI (Education Purpose)](https://github.com/Al-Hasib/Generative-AI/tree/main)**
-  - I write blog on Medium and make tutorial in Youtube. This is repo is made for the learners.
+  - I write blog on Medium and make tutorial in YouTube. This is repo is made for the learners.
   - Developed RAG, Quiz Test, [Resume Checker](https://youtu.be/Ml4qkQQopMs?si=SqzFkNCVBa1xJhHd) for HR Projects
 
 
