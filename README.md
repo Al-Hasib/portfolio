@@ -37,14 +37,15 @@ I’m a highly motivated and self-driven Machine Learning Engineer with a strong
 
 ### Machine Learning
 * **[Forest Cover Type Prediction](https://github.com/Al-Hasib/End-to-End-Forest-Cover-Type-Prediction-ML-Project)**
-  - End-to-end ML pipeline (Data ingestion → Training → Evaluation)
+  - End-to-end ML pipeline (Data ingestion → Training → Evaluation) ([Demo](https://youtu.be/KsaedbEfC3E?si=-PdmgoKR55DRTJxE))
   - Tools: Scikit-learn, XGBoost, Pandas, Numpy
 
 * **[IPL Score Prediction](https://github.com/Al-Hasib/IPL-Score-Prediction-App-Machine-Learning)**
-  - End to end pipeline (Data ingestion -> EDA -> Feature Engineering -> Training -> Evaluation -> Deployment
+  - End to end pipeline (Data ingestion -> EDA -> Feature Engineering -> Training -> Evaluation -> Deployment ([Demo](https://youtu.be/WfDScVmS2KM?si=_GKRG35DXLn1-ReW))
   - Regression model to predict the final score in live T20 matches
   - Tools: Pandas, Scikit-learn, Streamlit
-    
+
+
 ### Deep Learning
 * **[Brain Tumor (MRI) Detection](https://github.com/Al-Hasib/Brain-Tumor-Classification-with-MLOPs/tree/main)**
   - Data Collection -> Model Training -> Inference Test ->Evaluation
@@ -57,15 +58,24 @@ I’m a highly motivated and self-driven Machine Learning Engineer with a strong
   
 * **Small Object Detection**
 
+
 ### Natural Language Processing
-* **Sentiment Analysis**
+* **[Sentiment Analysis](https://github.com/Al-Hasib/Sentiment-Analysis/tree/main)**
+  - Three approaches for sentiment analysis - (Vader, Textblob, Transformer Model) ([Demo](https://youtu.be/fJR7zzWEe5g?si=6A1Wfu30giqzceOr))
+  - Created an APP with Streamlit
+  - Tools: Vader, Huggingface, Textblob, Streamlit, Pillow
+    
 * **[Text Classification](https://github.com/Al-Hasib/mPowerOnlineTest/tree/main)**
   - End-to-end pipeline for Text Classification task
   - Tools: Scikit-learn, Pandas, Matplotlib, NLTK, Wordcloud, Joblib
 
+
 ### Generative AI
+* **[Q&A Chatbot](https://youtu.be/fJR7zzWEe5g?si=6A1Wfu30giqzceOr)**
+  - QnA chatbot through Gemini API and create an APP with Streamlit ([Demo](https://github.com/Al-Hasib/Gemini-Projects/tree/main))
+    
 * **[Intent Based AI Search Application](https://github.com/Al-Hasib/AISearchApplication/tree/main)**
-  - E-commerce Search System through AI with safety Guardrails ([Combined](https://github.com/Al-Hasib/AI-Search-Application/tree/main)
+  - E-commerce Search System through AI with safety Guardrails ([Combined](https://github.com/Al-Hasib/AI-Search-Application/tree/main))
   - Tools: Huggingface, Langchain, RAG, Vector Database, Finetuning LLM, FastAPI
 
 * **[RAG Project](https://github.com/Al-Hasib/RAG-Project)**
@@ -81,13 +91,13 @@ I’m a highly motivated and self-driven Machine Learning Engineer with a strong
   - I write blog on Medium and make tutorial in Youtube. This is repo is made for the learners.
   - Developed RAG, Quiz Test, [Resume Checker](https://youtu.be/Ml4qkQQopMs?si=SqzFkNCVBa1xJhHd) for HR Projects
 
-### End-to-End Projects with MLOPS and Development
 
 ### Web Automation
 * **[Scraping Web Page](https://github.com/Al-Hasib/cfonle)**
   - Extract Screenshot of Car Information through VIN Number from CarfaxOnline.
   - Send the PDF to the Telegram Bot
   - Tools: Telegram, Selenium, Pandas, FastAPI, AWS(Windows-ec2 machine)
+
 
 ### API
 * **[Zip File Extraction API](https://github.com/Al-Hasib/zip_extractor_api)**
