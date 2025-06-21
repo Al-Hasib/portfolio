@@ -27,9 +27,9 @@ I’m a highly motivated and self-driven Machine Learning Engineer with a strong
 
 **Natural Language Processing**: NLTK, Gensim, TextBlob, Hugging Face, StandfordNLP
 
-**Generative AI**: LangChain, LlamaIndex, RAG, OpenAI Api, Hugging face, Pinecone (Vector Database), ChromaDB
+**Generative AI**: LangChain, langgraph, RAG, OpenAI Api, Hugging face, Pinecone (Vector Database), ChromaDB, Qdrant
 
-**MLOPs**: Docker, MLFlow, DVC, Apache Airflow, BentoML, CLOUD(AWS)
+**MLOPs**: Docker & Docker Compose, MLFlow, DVC, Apache Airflow, CLOUD(AWS)
 
 **Others**: Git & Github, Streamlit, Fast API, Flask
 
@@ -101,13 +101,27 @@ I’m a highly motivated and self-driven Machine Learning Engineer with a strong
   - Tools: Docker, FastAPI, OpenAI, langchain, Langgraph
 
 * **[Generative AI (Education Purpose)](https://github.com/Al-Hasib/Generative-AI/tree/main)**
-  - I write blog on Medium and make tutorial in YouTube. This is repo is made for the learners.
+  - I write a blog on Medium and make tutorials on YouTube. This repo is made for the learners.
   - Developed RAG, Quiz Test, [Resume Checker](https://youtu.be/Ml4qkQQopMs?si=SqzFkNCVBa1xJhHd) for HR Projects
+
+* **[STT(Whisper) Finetuning](https://huggingface.co/crtvai)**
+  - End-to-end pipeline ([Private Repo](https://gitlab.com/stt8542501/stt))
+  - Dataset Creation (Extract Arabic Transcription and Audio from YouTube), create a dataset and upload to Huggingface Hub.
+  - Data Ingestion from Huggingface -> Preprocess -> Training Whisper Model -> Evaluation
+  - Tools: Huggingface, Transformers, AWS Sagemaker, Pytube, Pandas, Soundfile
+
+* **[Voice Bot With RAG](https://uaesa.crtvai.com)**
+  - Perform RAG based on user Query and convert the text output into audio through ElevanLabs ([Backend API](https://api.space-voice.crtvai.com/docs))
+  - Tools: RAG, Vector Store, FastAPI, Elevenlabs, Hamsa API, LangChain
+
+* **[AudioSense Project](http://65.108.142.207:8080/docs)**
+  - Transcript Audio from Customers & Agents -> Analyze transcription & Audio -> Deployment ([Demo](https://audiosense.crtvai.com/))
+  - Tools: AWS, OpenAI, Gemini, Sentiment Analysis, SqlAlchemy, Postgres, FastAPI, OpenNotebook, RAG, Docker Compose, CronJob
 
 
 ### Web Automation
 * **[Scraping Web Page](https://github.com/Al-Hasib/cfonle)**
-  - Extract Screenshot of Car Information through VIN Number from CarfaxOnline.
+  - Extract Screenshots of the Car Information through VIN Number from CarfaxOnline.
   - Send the PDF to the Telegram Bot
   - Tools: Telegram, Selenium, Pandas, FastAPI, AWS(Windows-ec2 machine)
 
@@ -119,8 +133,8 @@ I’m a highly motivated and self-driven Machine Learning Engineer with a strong
 
 
 ## Open Source Contribution
-* [ENG_TEXT_CLEANER](https://pypi.org/project/eng-text-cleaner/) : A Python package for Cleaning the text from unnecessary characters like stopwords, punctuation, emojis, spelling mistakes and other preprocessing techniques.
-* [NoCodeTextClassifier](https://pypi.org/project/NoCodeTextClassifier/): A Python package for automatically perform the text classification task including text preprocessing, training the model, evaluation and inference. This will help you to perform text classification task without knowing the depth of the NLP methodologies. Also It will help you to perform hyperparameter tuning to find the best model for your dataset.
+* [ENG_TEXT_CLEANER](https://pypi.org/project/eng-text-cleaner/): A Python package for cleaning the text from unnecessary characters like stopwords, punctuation, emojis, spelling mistakes and other preprocessing techniques.
+* [NoCodeTextClassifier](https://pypi.org/project/NoCodeTextClassifier/): A Python package for automatically perform the text classification task including text preprocessing, training the model, evaluation and inference. This will help you to perform a text classification task without knowing the depth of the NLP methodologies. Also It will help you to perform hyperparameter tuning to find the best model for your dataset.
 
 ## Education
 Bachelor of Science, Computer Science & Engineering
@@ -134,3 +148,4 @@ Islamic University, Bangladesh
 <a href="https://medium.com/@abdullah.iu.cse" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@abdullah.iu.cse" height="30" width="40" /></a>
 </p>
 
+https://gitlab.com/abdullah-al-hasib
