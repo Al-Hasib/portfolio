@@ -161,4 +161,8 @@ Islamic University, Bangladesh
   <a href="mailto:alhasib.iu.cse@gmail.com" target="blank">
     <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/gmail.svg" alt="Email" height="30" width="40" />
   </a>
+  <a href="https://www.upwork.com/freelancers/~01be4e20479182591f?mp_source=share" target="blank">
+    <img align="center" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/upwork.svg" alt="Upwork" height="30" width="40" />
+  </a>
 </p>
+
