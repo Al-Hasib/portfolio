@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Md Abdullah Al Hasib — ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --white: #ffffff;
+      --off-white: #f8f8f6;
+      --surface: #f2f2ef;
+      --border: #e5e5e0;
+      --border-dark: #d0d0c8;
+      --text: #111110;
+      --text-mid: #555550;
+      --text-dim: #999990;
+      --blue: #2563eb;
+      --blue-light: #eff6ff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--text);
+      font-family: 'Epilogue', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5rem;
+      height: 64px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--text-mid);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-hire {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 1.2rem;
+      background: var(--text);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background 0.15s;
+    }
+
+    .nav-hire:hover { background: #333; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 8rem 5rem 5rem;
+      gap: 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-left { max-width: 580px; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.1s forwards;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--blue);
+      border-radius: 50%;
+    }
+
+    .hero-name {
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.2s forwards;
+    }
+
+    .hero-title {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.3s forwards;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.4s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.5s forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.5rem;
+      font-family: 'Epilogue', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 3px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+    }
+
+    .btn-dark { background: var(--text); color: var(--white); }
+    .btn-dark:hover { background: #333; }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-mid);
+      border: 1px solid var(--border-dark);
+    }
+    .btn-ghost:hover { border-color: var(--text); color: var(--text); }
+
+    /* Hero right stats */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.6s forwards;
+    }
+
+    .stat-block {
+      background: var(--off-white);
+      padding: 2rem 2.2rem;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    .stat-block:last-child { border-bottom: none; }
+    .stat-block:hover { background: var(--surface); }
+
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--text-dim);
+    }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 5rem; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* ─── ABOUT ─── */
+    .about-section {
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.85;
+    }
+
+    .about-text p { margin-bottom: 1.2rem; }
+
+    .about-links { display: flex; gap: 0.6rem; margin-top: 2rem; flex-wrap: wrap; }
+
+    .skills-list { display: flex; flex-direction: column; gap: 1rem; }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .skill-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding-top: 0.25rem;
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+    .tag {
+      background: var(--white);
+      border: 1px solid var(--border-dark);
+      color: var(--text-mid);
+      font-size: 0.72rem;
+      font-weight: 400;
+      padding: 0.28rem 0.65rem;
+      border-radius: 3px;
+      transition: all 0.15s;
+    }
+
+    .tag:hover { background: var(--text); color: var(--white); border-color: var(--text); }
+
+    /* ─── EXPERIENCE ─── */
+    .exp-section {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .exp-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .exp-item:last-child { border-bottom: none; }
+
+    .exp-left { padding-top: 0.1rem; }
+
+    .exp-period {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+
+    .exp-company {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .exp-type {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border: 1px solid var(--border-dark);
+      padding: 0.18rem 0.55rem;
+      border-radius: 2px;
+    }
+
+    .exp-type.onsite { color: var(--blue); border-color: rgba(37,99,235,0.3); background: var(--blue-light); }
+
+    .exp-right {}
+
+    .exp-role {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 0.9rem;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .exp-bullets li {
+      font-size: 0.86rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.7;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--border-dark);
+      font-weight: 400;
+    }
+
+    /* ─── PROJECTS ─── */
+    .tabs {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      font-family: 'Epilogue', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border-dark);
+      background: transparent;
+      color: var(--text-mid);
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s;
+    }
+
+    .tab-btn.active { background: var(--text); color: var(--white); border-color: var(--text); }
+    .tab-btn:hover:not(.active) { border-color: var(--text); color: var(--text); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .project-card {
+      background: var(--white);
+      padding: 1.8rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    .project-card:hover { background: var(--off-white); }
+
+    .project-cat {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--blue);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+    .project-desc {
+      font-size: 0.83rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.75;
+      flex: 1;
+    }
+
+    .project-tools { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+
+    .tool-tag {
+      background: var(--surface);
+      color: var(--text-mid);
+      font-size: 0.67rem;
+      font-weight: 500;
+      padding: 0.22rem 0.55rem;
+      border-radius: 2px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .project-link {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .project-link:hover { color: var(--text); }
+
+    /* ─── OPEN SOURCE ─── */
+    .oss-section {
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .oss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    .oss-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2rem 2.2rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .oss-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+    .oss-name { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.6rem; }
+
+    .oss-desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+
+    .oss-link {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .oss-link:hover { text-decoration: underline; }
+
+    /* ─── CONNECT ─── */
+    .connect-section {
+      text-align: center;
+      padding: 7rem 5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .connect-kicker {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .connect-heading {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .connect-sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      margin-bottom: 3rem;
+    }
+
+    .social-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid var(--border-dark);
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+
+    .social-btn:hover { background: var(--text); color: var(--white); border-color: var(--text); }
+    .social-btn svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2.2rem;
+      background: var(--text);
+      color: var(--white);
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background 0.15s;
+    }
+
+    .email-btn:hover { background: #333; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 1.5rem 5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer p { font-size: 0.75rem; color: var(--text-dim); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--white); }
+    ::-webkit-scrollbar-thumb { background: var(--border-dark); border-radius: 10px; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; }
+      .hero-right { display: none; }
+      .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.8rem; }
+      .oss-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 0.4rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Abdullah Al Hasib</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#oss">Open Source</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+    <a href="mailto:alhasib.iu.cse@gmail.com" class="nav-hire">Hire Me</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <div class="hero-badge">Available for Work</div>
+      <h1 class="hero-name">Md Abdullah<br>Al Hasib</h1>
+      <p class="hero-title">Machine Learning &amp; AI Engineer</p>
+      <p class="hero-desc">
+        Building end-to-end AI systems — scalable ML pipelines, deep learning models, and Generative AI applications powered by RAG, LLMs, and computer vision. Based in Bangladesh.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-dark">View Projects</a>
+        <a href="https://github.com/Al-Hasib" target="_blank" class="btn btn-ghost">GitHub</a>
+        <a href="https://linkedin.com/in/md-abdullah-al-hasib-874174194" target="_blank" class="btn btn-ghost">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="stat-block">
+        <div class="stat-number">6+</div>
+        <div class="stat-label">Technical Domains</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Projects Built</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">2</div>
+        <div class="stat-label">PyPI Packages Published</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">B.Sc.</div>
+        <div class="stat-label">Computer Science & Engineering</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="section-header reveal">
+      <span class="section-num">01</span>
+      <h2 class="section-title">About & Skills</h2>
+    </div>
+    <div class="about-layout">
+      <div class="about-text reveal">
+        <p>I'm a highly motivated Machine Learning Engineer with a strong foundation in developing and deploying scalable AI solutions. I specialize in building end-to-end ML pipelines, deep learning applications, and real-world AI-powered systems.</p>
+        <p>My work spans Natural Language Processing, Computer Vision, and Generative AI. I'm passionate about open source and delivering AI solutions that create meaningful impact.</p>
+        <p>I hold a B.Sc. in Computer Science & Engineering from Islamic University, Bangladesh. I also write on Medium and publish tutorials on YouTube for the ML community.</p>
+        <div class="about-links">
+          <a href="https://medium.com/@abdullah.iu.cse" target="_blank" class="btn btn-ghost">Medium Blog</a>
+          <a href="https://www.youtube.com/@mdabdullahalhasib9081" target="_blank" class="btn btn-ghost">YouTube</a>
+          <a href="https://www.upwork.com/freelancers/~01be4e20479182591f?mp_source=share" target="_blank" class="btn btn-ghost">Upwork</a>
+        </div>
+      </div>
+      <div class="skills-list reveal">
+        <div class="skill-row"><span class="skill-label">Language</span><div class="skill-tags"><span class="tag">Python</span></div></div>
+        <div class="skill-row"><span class="skill-label">Data</span><div class="skill-tags"><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span></div></div>
+        <div class="skill-row"><span class="skill-label">ML</span><div class="skill-tags"><span class="tag">Scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Ensemble</span></div></div>
+        <div class="skill-row"><span class="skill-label">Deep Learning</span><div class="skill-tags"><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">Transformers</span></div></div>
+        <div class="skill-row"><span class="skill-label">Vision</span><div class="skill-tags"><span class="tag">OpenCV</span><span class="tag">YOLO</span><span class="tag">Detectron2</span><span class="tag">Ultralytics</span></div></div>
+        <div class="skill-row"><span class="skill-label">NLP</span><div class="skill-tags"><span class="tag">HuggingFace</span><span class="tag">NLTK</span><span class="tag">Gensim</span><span class="tag">TextBlob</span></div></div>
+        <div class="skill-row"><span class="skill-label">Gen AI</span><div class="skill-tags"><span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">RAG</span><span class="tag">Pinecone</span><span class="tag">Qdrant</span></div></div>
+        <div class="skill-row"><span class="skill-label">MLOps</span><div class="skill-tags"><span class="tag">Docker</span><span class="tag">MLFlow</span><span class="tag">DVC</span><span class="tag">Airflow</span><span class="tag">AWS</span></div></div>
+        <div class="skill-row"><span class="skill-label">APIs</span><div class="skill-tags"><span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">Streamlit</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="exp-section">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Experience</h2>
+    </div>
+    <div class="exp-timeline">
+
+      <div class="exp-item reveal">
+        <div class="exp-left">
+          <div class="exp-period">Sep 2025 – Present</div>
+          <div class="exp-company">Nybsys</div>
+          <span class="exp-type onsite">Onsite</span>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Machine Learning Engineer</div>
+          <ul class="exp-bullets">
+            <li>Forecasting time series data with deep learning models for telecom analytics.</li>
+            <li>Building an agentic platform combining multiple RAG strategies — SQL RAG, Graph RAG, and Vanilla RAG — in a single unified system.</li>
+            <li>Automatically generating insights from telecom data and visualizing results end-to-end.</li>
+            <li>Developing a chatbot to handle large, multi-dimensional telecom datasets and surface meaningful insights for stakeholders.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-left">
+          <div class="exp-period">Nov 2024 – Sep 2025</div>
+          <div class="exp-company">Creative AI</div>
+          <span class="exp-type">Remote</span>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">AI Developer</div>
+          <ul class="exp-bullets">
+            <li>Fine-tuned large language models for Arabic, with a focus on Whisper fine-tuning for Jordanian Arabic accent recognition.</li>
+            <li>Built and maintained RAG applications for production use cases.</li>
+            <li>Automated end-to-end ML pipelines and web automation workflows.</li>
+            <li>Developed AudioSense — an AI platform that analyzes customer and agent audio, extracting insights and storing structured data in PostgreSQL.</li>
+            <li>Built VoiceBot — a bilingual (English & Arabic) speech-to-speech RAG chatbot with chat history analysis.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-left">
+          <div class="exp-period">Sep 2023 – May 2024</div>
+          <div class="exp-company">KBY-AI</div>
+          <span class="exp-type">Remote</span>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Machine Learning Engineer</div>
+          <ul class="exp-bullets">
+            <li>Designed, developed, and optimized computer vision algorithms deployed on GPU servers.</li>
+            <li>Trained and fine-tuned deep learning models for cow farm monitoring — incident detection, animal counting, and feed lane detection.</li>
+            <li>Integrated computer vision models into production software systems and ensured robust deployment pipelines.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-left">
+          <div class="exp-period">Sep 2024 – Present</div>
+          <div class="exp-company">Upwork</div>
+          <span class="exp-type">Freelance</span>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">AI Developer</div>
+          <ul class="exp-bullets">
+            <li>Built a Legal Application automating debt collection workflows — AI validation, legal event triggering, attorney selection, judgment tracking, and cost analysis.</li>
+            <li>Delivering ad-hoc AI/ML side projects for clients as opportunities arise.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-left">
+          <div class="exp-period">Jan 2023 – Feb 2024</div>
+          <div class="exp-company">Namespace IT</div>
+          <span class="exp-type">Remote</span>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Jr. Machine Learning Engineer</div>
+          <ul class="exp-bullets">
+            <li>Content writer at AIOnlineCourse covering Machine Learning, Deep Learning, and Computer Vision.</li>
+            <li>Explored and documented emerging AI technologies, building practical projects across different AI domains.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-left">
+          <div class="exp-period">Ongoing</div>
+          <div class="exp-company">Medium · YouTube</div>
+          <span class="exp-type">Creator</span>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Technical Content Creator</div>
+          <ul class="exp-bullets">
+            <li>Publishing AI/ML/DL articles on Medium and tutorials on YouTube — covering interview prep, new technologies, and hands-on implementation guides.</li>
+            <li>Making advanced AI concepts accessible to learners worldwide.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Projects</h2>
+    </div>
+    <div class="tabs reveal">
+      <button class="tab-btn active" onclick="filterProjects('all',this)">All</button>
+      <button class="tab-btn" onclick="filterProjects('ml',this)">Machine Learning</button>
+      <button class="tab-btn" onclick="filterProjects('dl',this)">Deep Learning</button>
+      <button class="tab-btn" onclick="filterProjects('cv',this)">Computer Vision</button>
+      <button class="tab-btn" onclick="filterProjects('nlp',this)">NLP</button>
+      <button class="tab-btn" onclick="filterProjects('genai',this)">Generative AI</button>
+      <button class="tab-btn" onclick="filterProjects('api',this)">API & Automation</button>
+    </div>
+    <div class="projects-grid" id="projectsGrid">
+      <div class="project-card reveal" data-cat="ml">
+        <div class="project-cat">Machine Learning</div>
+        <div class="project-name">Forest Cover Type Prediction</div>
+        <div class="project-desc">End-to-end ML pipeline covering data ingestion, training, and evaluation for multi-class forest cover classification.</div>
+        <div class="project-tools"><span class="tool-tag">Scikit-learn</span><span class="tool-tag">XGBoost</span><span class="tool-tag">Pandas</span></div>
+        <div class="project-links">
+          <a href="https://github.com/Al-Hasib/End-to-End-Forest-Cover-Type-Prediction-ML-Project" target="_blank" class="project-link">GitHub →</a>
+          <a href="https://youtu.be/KsaedbEfC3E?si=-PdmgoKR55DRTJxE" target="_blank" class="project-link">Demo →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="ml">
+        <div class="project-cat">Machine Learning</div>
+        <div class="project-name">IPL Score Prediction</div>
+        <div class="project-desc">Regression model predicting T20 cricket final scores in real-time, with full EDA, feature engineering, and Streamlit deployment.</div>
+        <div class="project-tools"><span class="tool-tag">Pandas</span><span class="tool-tag">Scikit-learn</span><span class="tool-tag">Streamlit</span></div>
+        <div class="project-links">
+          <a href="https://github.com/Al-Hasib/IPL-Score-Prediction-App-Machine-Learning" target="_blank" class="project-link">GitHub →</a>
+          <a href="https://youtu.be/WfDScVmS2KM?si=_GKRG35DXLn1-ReW" target="_blank" class="project-link">Demo →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="dl">
+        <div class="project-cat">Deep Learning</div>
+        <div class="project-name">Brain Tumor MRI Detection</div>
+        <div class="project-desc">MRI scan classification model with MLOps integration using MLFlow for experiment tracking and reproducibility.</div>
+        <div class="project-tools"><span class="tool-tag">PyTorch</span><span class="tool-tag">TorchVision</span><span class="tool-tag">MLFlow</span></div>
+        <div class="project-links">
+          <a href="https://github.com/Al-Hasib/Brain-Tumor-Classification-with-MLOPs/tree/main" target="_blank" class="project-link">GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="dl">
+        <div class="project-cat">Deep Learning</div>
+        <div class="project-name">Image Classification Pipeline</div>
+        <div class="project-desc">Full pipeline from data collection and preprocessing through PyTorch model training, evaluation, and inference.</div>
+        <div class="project-tools"><span class="tool-tag">PyTorch</span><span class="tool-tag">TorchVision</span><span class="tool-tag">Matplotlib</span></div>
+        <div class="project-links">
+          <a href="https://github.com/Al-Hasib/codes/tree/master" target="_blank" class="project-link">GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="cv">
+        <div class="project-cat">Computer Vision</div>
+        <div class="project-name">License Plate Detection & Recognition</div>
+        <div class="project-desc">YOLOv8-based license plate detection and OCR pipeline trained on custom annotated data.</div>
+        <div class="project-tools"><span class="tool-tag">YOLOv8</span><span class="tool-tag">Ultralytics</span><span class="tool-tag">OpenCV</span></div>
+        <div class="project-links">
+          <a href="https://github.com/Al-Hasib/Licence-Plate-Detection-Recognition/tree/main" target="_blank" class="project-link">GitHub →</a>
+          <a href="https://youtu.be/ZKxgbBqu3sc?si=p6f0vEBge9PDgbDG" target="_blank" class="project-link">Demo →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="cv">
+        <div class="project-cat">Computer Vision</div>
+        <div class="project-name">Attendance via Face Recognition</div>
+        <div class="project-desc">Automated attendance system using live camera feed to recognize faces and log to Excel.</div>
+        <div class="project-tools"><span class="tool-tag">OpenCV</span><span class="tool-tag">face_recognition</span><span class="tool-tag">Pandas</span></div>
+        <div class="project-links">
+          <a href="https://github.com/Al-Hasib/face_recognition_attendance/tree/main" target="_blank" class="project-link">GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="nlp">
+        <div class="project-cat">NLP</div>
+        <div class="project-name">Sentiment Analysis App</div>
+        <div class="project-desc">Three-approach sentiment analysis using VADER, TextBlob, and transformer models — packaged as a Streamlit app.</div>
+        <div class="project-tools"><span class="tool-tag">VADER</span><span class="tool-tag">HuggingFace</span><span class="tool-tag">Streamlit</span></div>
+        <div class="project-links">
+          <a href="https://github.com/Al-Hasib/Sentiment-Analysis/tree/main" target="_blank" class="project-link">GitHub →</a>
+          <a href="https://youtu.be/fJR7zzWEe5g?si=6A1Wfu30giqzceOr" target="_blank" class="project-link">Demo →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="nlp">
+        <div class="project-cat">NLP</div>
+        <div class="project-name">Text Classification Pipeline</div>
+        <div class="project-desc">End-to-end text classification with preprocessing, training, evaluation, and production-ready inference.</div>
+        <div class="project-tools"><span class="tool-tag">Scikit-learn</span><span class="tool-tag">NLTK</span><span class="tool-tag">Wordcloud</span></div>
+        <div class="project-links">
+          <a href="https://github.com/Al-Hasib/mPowerOnlineTest/tree/main" target="_blank" class="project-link">GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="genai">
+        <div class="project-cat">Generative AI</div>
+        <div class="project-name">AudioSense — Call Analytics</div>
+        <div class="project-desc">Transcribes and analyzes customer-agent calls with sentiment analysis and RAG-powered insights, deployed on AWS.</div>
+        <div class="project-tools"><span class="tool-tag">OpenAI</span><span class="tool-tag">RAG</span><span class="tool-tag">FastAPI</span><span class="tool-tag">AWS</span></div>
+        <div class="project-links">
+          <a href="https://audiosense.crtvai.com/" target="_blank" class="project-link">Live Demo →</a>
+          <a href="http://65.108.142.207:8080/docs" target="_blank" class="project-link">API Docs →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="genai">
+        <div class="project-cat">Generative AI</div>
+        <div class="project-name">Voice Bot with RAG</div>
+        <div class="project-desc">RAG-powered voice chatbot that answers queries and converts responses to audio with ElevenLabs TTS.</div>
+        <div class="project-tools"><span class="tool-tag">RAG</span><span class="tool-tag">LangChain</span><span class="tool-tag">ElevenLabs</span></div>
+        <div class="project-links">
+          <a href="https://uaesa.crtvai.com" target="_blank" class="project-link">Live App →</a>
+          <a href="https://api.space-voice.crtvai.com/docs" target="_blank" class="project-link">API Docs →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="genai">
+        <div class="project-cat">Generative AI</div>
+        <div class="project-name">RAG Chatbot Application</div>
+        <div class="project-desc">Production RAG chatbot with UI to upload knowledge bases. Supports PDF ingestion, vector storage, and contextual Q&A.</div>
+        <div class="project-tools"><span class="tool-tag">OpenAI</span><span class="tool-tag">LangChain</span><span class="tool-tag">Qdrant</span><span class="tool-tag">Docker</span></div>
+        <div class="project-links">
+          <a href="https://github.com/Al-Hasib/RAG-Project" target="_blank" class="project-link">GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="genai">
+        <div class="project-cat">Generative AI</div>
+        <div class="project-name">Whisper STT Fine-Tuning</div>
+        <div class="project-desc">Full Whisper fine-tuning pipeline for Arabic speech with YouTube dataset creation and AWS SageMaker training.</div>
+        <div class="project-tools"><span class="tool-tag">Whisper</span><span class="tool-tag">HuggingFace</span><span class="tool-tag">AWS SageMaker</span></div>
+        <div class="project-links">
+          <a href="https://huggingface.co/crtvai" target="_blank" class="project-link">HuggingFace →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="genai">
+        <div class="project-cat">Generative AI</div>
+        <div class="project-name">Intent-Based AI Search</div>
+        <div class="project-desc">E-commerce search system with fine-tuned LLM, RAG, safety guardrails, and vector database for intent understanding.</div>
+        <div class="project-tools"><span class="tool-tag">LangChain</span><span class="tool-tag">RAG</span><span class="tool-tag">FastAPI</span></div>
+        <div class="project-links">
+          <a href="https://github.com/Al-Hasib/AISearchApplication/tree/main" target="_blank" class="project-link">GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="api">
+        <div class="project-cat">API</div>
+        <div class="project-name">Zip File Extraction API</div>
+        <div class="project-desc">Downloads and extracts ZIP files, stores contents to AWS S3, and returns accessible download links.</div>
+        <div class="project-tools"><span class="tool-tag">FastAPI</span><span class="tool-tag">AWS S3</span><span class="tool-tag">Pydantic</span></div>
+        <div class="project-links">
+          <a href="https://github.com/Al-Hasib/zip_extractor_api" target="_blank" class="project-link">GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card reveal" data-cat="api">
+        <div class="project-cat">Web Automation</div>
+        <div class="project-name">CarFax Web Scraper</div>
+        <div class="project-desc">VIN-based car info extractor generating PDFs delivered via Telegram bot, running on AWS Windows EC2.</div>
+        <div class="project-tools"><span class="tool-tag">Selenium</span><span class="tool-tag">FastAPI</span><span class="tool-tag">Telegram</span><span class="tool-tag">AWS</span></div>
+        <div class="project-links">
+          <a href="https://github.com/Al-Hasib/cfonle" target="_blank" class="project-link">GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN SOURCE -->
+  <section id="oss" class="oss-section">
+    <div class="section-header reveal">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Open Source</h2>
+    </div>
+    <div class="oss-grid">
+      <div class="oss-card reveal">
+        <div class="oss-name">ENG_TEXT_CLEANER</div>
+        <div class="oss-desc">A Python package for cleaning text from unwanted characters — stopwords, punctuation, emojis, spelling mistakes, and other standard preprocessing steps. Available on PyPI.</div>
+        <a href="https://pypi.org/project/eng-text-cleaner/" target="_blank" class="oss-link">View on PyPI →</a>
+      </div>
+      <div class="oss-card reveal">
+        <div class="oss-name">NoCodeTextClassifier</div>
+        <div class="oss-desc">Automates the complete text classification workflow — preprocessing, training, evaluation, and inference — without requiring deep NLP expertise. Includes hyperparameter tuning. Available on PyPI.</div>
+        <a href="https://pypi.org/project/NoCodeTextClassifier/" target="_blank" class="oss-link">View on PyPI →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section id="connect" class="connect-section">
+    <div class="connect-kicker reveal">Let's work together</div>
+    <h2 class="connect-heading reveal">Have a project in mind?</h2>
+    <p class="connect-sub reveal">Open to freelance, collaborations, and full-time opportunities.</p>
+    <div class="social-row reveal">
+      <a href="https://linkedin.com/in/md-abdullah-al-hasib-874174194" target="_blank" class="social-btn">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/Al-Hasib" target="_blank" class="social-btn">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.youtube.com/@mdabdullahalhasib9081" target="_blank" class="social-btn">
+        <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        YouTube
+      </a>
+      <a href="https://medium.com/@abdullah.iu.cse" target="_blank" class="social-btn">
+        <svg viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+        Medium
+      </a>
+      <a href="https://www.upwork.com/freelancers/~01be4e20479182591f?mp_source=share" target="_blank" class="social-btn">
+        <svg viewBox="0 0 24 24"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.543-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
+        Upwork
+      </a>
+      <a href="mailto:alhasib.iu.cse@gmail.com" class="social-btn">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Email
+      </a>
+    </div>
+    <a href="mailto:alhasib.iu.cse@gmail.com" class="email-btn reveal">alhasib.iu.cse@gmail.com</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Md Abdullah Al Hasib</p>
+    <p>Built with HTML & CSS · Hosted on GitHub Pages</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 50);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    function filterProjects(cat, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.project-card').forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'flex' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
